@@ -12,10 +12,10 @@ class Staff {
         this.movies.push(movieInstance);
     }
     getName() {
-        return `Name: ${this.name}`
+        return this.name
     }
     getRole() {
-        return `Role: ${this.role}`
+        return this.role
     }
     getAge() {
         let currentYear = new Date().getFullYear();
@@ -55,16 +55,16 @@ class Movies {
     }
 
     getTitle() {
-        return `Title: ${this.title}`
+        return this.title
     }
     getStars() {
-        return `Stars: ${this.stars}`
+        return this.stars
     }
     getWrites() {
-        return `Writers: ${this.writers}`
+        return this.writers
     }
     getDirector() {
-        return `Director: ${this.director}`
+        return this.director
     }
     getRating() {
         let rateAva = 0;
@@ -114,6 +114,6 @@ legend.newRate = 8;
 console.log(legend);
 console.log(legend.getRating());
 
-// console.log(legend.getStars().map(actor => `${actor.getName()} ${actor.getAge()}`));
+console.log(legend.getStars().map(actor => `${actor.getName()} ${actor.getAge()}`));
 const director = legend.getDirector();
-console.log(`Director: ${director.getName()}`);
+console.log(`Director: ${director.map(actor => `${actor.getName()}`)}`);
